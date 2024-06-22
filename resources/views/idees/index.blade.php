@@ -10,8 +10,7 @@
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Date de création</th>
-                <th>Statut</th>
-                <th>Actions</th>
+               <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +19,11 @@
                 <td>{{ $idee->libelle }}</td>
                 <td>{{ Str::limit($idee->description, 50) }}</td>
                 <td>{{ $idee->created_at->format('d/m/Y') }}</td>
-                <td>{{ $idee->status }}</td>
                 <td>
-                    <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info">Voir</a>
+                    <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info">Voir detail idee</a>
                     <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning">Modifier</a>
+                    <a href="{{ route('idees.commentaires.create', $idee->id) }}" class="btn btn-secondary">Ajouter un Commentaire</a>
+                    <a href="{{ route('idees.commentaires.index', $idee->id) }}" class="btn btn-info">Voir un Commentaires</a>
                     <form action="{{ route('idees.destroy', $idee->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
@@ -35,4 +35,5 @@
         </tbody>
     </table>
 </div>
+
 

@@ -8,20 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Idee extends Model
 {
     use HasFactory;
-protected $fillable = [
-        'libelle',
-        'description',
-        'auteur_nom_complet',
-        'auteur_email',
-        'categorie_id',
-        'status',
-    ];
+
+    protected $fillable = ['libelle', 'description', 'categorie_id', 'auteur_nom_complet', 'auteur_email', 'status', 'date_creation'];
+
+    public function commentaires()
+    {
+        return $this->hasMany(Commentaire::class);
+    }
 
     public function categorie()
     {
         return $this->belongsTo(Categorie::class);
     }
-
-
-    
 }
