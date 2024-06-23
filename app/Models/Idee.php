@@ -30,9 +30,12 @@ class Idee extends Model
         return $this->belongsTo(Categorie::class);
     }
 
+
     // Accessor to format the date_creation attribute for datetime-local input
     public function getDateCreationAttribute($value)
     {
         return Carbon::parse($value)->format('Y-m-d\TH:i');
     }
 }
+
+

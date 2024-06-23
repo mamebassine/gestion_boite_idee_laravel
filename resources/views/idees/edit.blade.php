@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifier l'idée</title>
-    <!-- Intégration de Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -59,7 +58,7 @@
             </div>
             <div class="form-group">
                 <label for="date_creation">Date de création</label>
-                <input type="text" name="date_creation" class="form-control" value="{{ $idee->date_creation }}" required>
+                <input type="datetime-local" name="date_creation" class="form-control" value="{{ $idee->date_creation }}" required>
             </div>
             <div class="form-group">
                 <label for="status">Statut</label>

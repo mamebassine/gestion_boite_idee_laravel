@@ -78,4 +78,4 @@
         </tbody>
     </table>
 </div>
-@endsection
+
