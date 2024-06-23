@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Commentaire;
@@ -35,27 +34,25 @@ class CommentaireController extends Controller
         return redirect()->route('idees.commentaires.index', $idee->id)->with('success', 'Commentaire ajouté avec succès.');
     }
 
-    public function edit(Idee $idee, Commentaire $commentaire)
+    public function edit($ideeId, $commentaireId)
     {
+        $idee = Idee::findOrFail($ideeId);
+        $commentaire = Commentaire::findOrFail($commentaireId);
         return view('commentaires.edit', compact('idee', 'commentaire'));
     }
 
-    public function update(Request $request, Idee $idee, Commentaire $commentaire)
+    public function update(Request $request, $ideeId, $commentaireId)
     {
-        $request->validate([
-            'nom_complet_auteur' => 'required|string|max:255',
-            'libelle' => 'required|string',
-        ]);
-
+        $commentaire = Commentaire::findOrFail($commentaireId);
         $commentaire->update($request->all());
-
-        return redirect()->route('idees.commentaires.index', $idee->id)->with('success', 'Commentaire mis à jour avec succès.');
+        return redirect()->route('idees.commentaires.index', $ideeId)->with('success', 'Commentaire mis à jour avec succès.');
     }
 
-    public function destroy(Idee $idee, Commentaire $commentaire)
+    public function destroy($ideeId, $commentaireId)
     {
+        $commentaire = Commentaire::findOrFail($commentaireId);
         $commentaire->delete();
-
-        return redirect()->route('idees.commentaires.index', $idee->id)->with('success', 'Commentaire supprimé avec succès.');
+        return redirect()->route('idees.commentaires.index', $ideeId)->with('success', 'Commentaire supprimé avec succès.');
     }
 }
+

@@ -58,8 +58,20 @@ class IdeeController extends Controller
         $idee = Idee::findOrFail($id);
         $idee->update($request->all());
         return redirect()->route('idees.index')->with('success', 'Idée mise à jour avec succès.');
+       // return redirect()->route('idees.edit', ['id' => $idee->id]);
     }
 
+
+    public function someMethod()
+{
+    $idee = Idee::find(1); // Supposons que vous récupérez une idée avec l'ID 1
+
+    // Générer l'URL
+    $url = route('idees.edit', ['id' => $idee->id]);
+
+    // Ou rediriger vers cette route
+    return redirect()->route('idees.edit', ['id' => $idee->id]);
+}
     public function destroy($id)
     {
         $idee = Idee::findOrFail($id);

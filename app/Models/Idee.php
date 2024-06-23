@@ -20,4 +20,7 @@ class Idee extends Model
     {
         return $this->belongsTo(Categorie::class);
     }
+    
 }
+
+
