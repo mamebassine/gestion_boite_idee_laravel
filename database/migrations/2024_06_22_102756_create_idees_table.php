@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('auteur_email');
             $table->foreignId('categorie_id')->constrained('categories');
             $table->enum('status', ['en attente', 'approuvée', 'refusée'])->default('en attente');
+            $table->date('date_creation')->nullable(); // Ajout de la colonne date_creation
             $table->timestamps();
         });
     }

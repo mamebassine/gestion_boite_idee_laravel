@@ -58,14 +58,14 @@
                 <p class="card-text"><small class="text-muted">{{ $idee->created_at->format('d/m/Y') }}</small></p>
                 <div class="btn-group">
                     <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-default">Voir détail </a>
-                    <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-default">Modifier</a>
-                    <a href="{{ route('idees.commentaires.create', $idee->id) }}" class="btn btn-default">Ajout commentaire</a>
-                    <a href="{{ route('idees.commentaires.index', $idee->id) }}" class="btn btn-default">Voir Commentaires</a>
-                    <form action="{{ route('idees.destroy', $idee->id) }}" method="POST" style="display:inline-block;">
+                    {{-- <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-default">Modifier</a> --}}
+                    {{-- <a href="{{ route('idees.commentaires.create', $idee->id) }}" class="btn btn-default">Ajout commentaire</a>
+                    <a href="{{ route('idees.commentaires.index', $idee->id) }}" class="btn btn-default">Voir Commentaires</a> --}}
+                    {{-- <form action="{{ route('idees.destroy', $idee->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Supprimer</button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>

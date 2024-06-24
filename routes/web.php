@@ -11,6 +11,9 @@ use App\Models\Administrateur;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
 // Routes pour idees
 Route::get('/idees', [IdeeController::class, 'index'])->name('idees.index');
 Route::get('/idees/create', [IdeeController::class, 'create'])->name('idees.create');
@@ -102,3 +105,62 @@ Route::post('/logout', [AdministrateurController::class, 'logout'])->name('logou
 //Route::get('/logout', [AdministrateurController::class, 'logout'])->name('logout');
 
 Route::get('/logout', [AdministrateurController::class, 'logout'])->name('logout');
+
+
+
+//envoi email
+// Enregistrement des routes pour le contrôleur IdeeController, qui gère toutes les actions CRUD
+//    Route::resource('idees', IdeeController::class);
+
+
+// garde  
+
+
+// // Routes pour les opérations CRUD sur les idées
+// Route::resource('idees', IdeeController::class);
+
+// // Route pour afficher le formulaire de création d'une nouvelle idée
+// Route::get('idees/create', [IdeeController::class, 'create'])->name('idees.create');
+
+// // Route pour afficher une idée spécifique
+// Route::get('idees/{id}', [IdeeController::class, 'show'])->name('idees.show');
+
+// // Route pour afficher le formulaire d'édition d'une idée existante
+// Route::get('idees/{id}/edit', [IdeeController::class, 'edit'])->name('idees.edit');
+
+// // Route pour mettre à jour une idée existante
+// Route::put('idees/{id}', [IdeeController::class, 'update'])->name('idees.update');
+
+// // Route pour supprimer une idée existante
+// Route::delete('idees/{id}', [IdeeController::class, 'destroy'])->name('idees.destroy');
+
+// // Route pour afficher la liste de toutes les idées
+// Route::get('idees', [IdeeController::class, 'index'])->name('idees.index');
+
+// // Route pour enregistrer une nouvelle idée dans la base de données
+// Route::post('idees', [IdeeController::class, 'store'])->name('idees.store');
+
+// // Route pour la page d'accueil
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
+
+// // Route pour afficher le tableau de bord (si nécessaire)
+// Route::get('/dashboard', function () {
+//     // Logic for displaying the dashboard
+//     return view('dashboard');
+// })->name('dashboard');
+// // Route pour afficher le profil de l'utilisateur (si nécessaire)
+// Route::get('/profile', function () {
+//     // Logic for displaying the user profile
+//     return view('profile');
+// })->name('profile');
+
+
+
+// Routes pour l'authentification (connexion, inscription, déconnexion)
+// Auth::routes();
+
+// Route pour l'accueil après la connexion (si nécessaire)
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

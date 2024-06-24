@@ -87,7 +87,8 @@
             <div class="container">
                 <div class="logo">Boîte à Idées</div>
                 <nav>
-                    <a href="{{ route('idees.index') }}">Espace pour tous</a>
+                    <a href="{{ route('idees.index') }}">Espace pour ajout idee</a>
+                    <a href="{{ route('categories.index') }}">Espace ajout categorie</a>
                     <a href="{{ route('administrateurs.login') }}">Espace Perso</a>
                 </nav>
             </div>

@@ -29,6 +29,10 @@
             <label for="auteur_email">Email de l'auteur</label>
             <input type="email" name="auteur_email" class="form-control" required>
         </div>
+        <div class="form-group">
+            <label for="date_creation">Date de création</label>
+            <input type="date" name="date_creation" class="form-control" required>
+        </div>
         <button type="submit" class="btn btn-primary">Soumettre</button>
     </form>
 </div>
