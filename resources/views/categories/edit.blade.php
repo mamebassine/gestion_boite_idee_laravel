@@ -59,14 +59,19 @@
 <div class="container">
     <div class="form-container">
         <h1>Modifier la catégorie</h1>
-        <form action="{{ route('categories.update', $categorie->id) }}" method="POST">
+        <!-- resources/views/categories/edit.blade.php -->
+        <form action="{{ route('categories.update', $category->id) }}" method="POST">
             @csrf
             @method('PUT')
-            <div class="form-group">
-                <label for="libelle">Libellé de la catégorie</label>
-                <input type="text" name="libelle" class="form-control" value="{{ $categorie->libelle }}" required>
+            <div>
+                <label for="libelle">Libellé:</label>
+                <input type="text" name="libelle" value="{{ old('libelle', $category->libelle) }}">
+                @error('libelle')
+                    <div>{{ $message }}</div>
+                @enderror
             </div>
-            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+            <button type="submit">Mettre à jour</button>
         </form>
+
     </div>
 </div>

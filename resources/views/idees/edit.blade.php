@@ -61,8 +61,6 @@
                 <label for="date_creation">Date de création</label>
                 <input type="text" name="date_creation" class="form-control" value="{{ $idee->date_creation }}" required>
             </div>
-            
-            
             <div class="form-group">
                 <label for="status">Statut</label>
                 <select name="status" id="status" class="form-control">

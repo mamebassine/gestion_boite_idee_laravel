@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Commentaire;
 use App\Models\Idee;
 use Illuminate\Http\Request;
-
 class CommentaireController extends Controller
+
 {
     public function index(Idee $idee)
     {
