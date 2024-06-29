@@ -43,7 +43,7 @@
     }
 
     button[type="submit"] {
-        background-color: #007bff; /* Couleur de fond bleue */
+        background-color: #D5EEC6; /* Couleur de fond bleue */
         color: #fff; /* Texte blanc */
         border: none;
         padding: 10px 20px;
@@ -52,7 +52,7 @@
     }
 
     button[type="submit"]:hover {
-        background-color: #0056b3; /* Variation de couleur au survol */
+        background-color: #D5EEC6; /* Variation de couleur au survol */
     }
 </style>
 
@@ -60,12 +60,12 @@
     <div class="form-container">
         <h1>Modifier la catégorie</h1>
         <!-- resources/views/categories/edit.blade.php -->
-        <form action="{{ route('categories.update', $category->id) }}" method="POST">
+        <form action="{{ route('categories.update', $categorie->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div>
                 <label for="libelle">Libellé:</label>
-                <input type="text" name="libelle" value="{{ old('libelle', $category->libelle) }}">
+                <input type="text" name="libelle" value="{{ old('libelle', $categorie->libelle) }}">
                 @error('libelle')
                     <div>{{ $message }}</div>
                 @enderror

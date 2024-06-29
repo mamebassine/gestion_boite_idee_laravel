@@ -28,24 +28,24 @@ class CategorieController extends Controller
         return redirect()->route('categories.index')->with('success', 'Catégorie créée avec succès.');
     }
 
-    public function edit(Categorie $category) // Renommer le paramètre à $category
+    public function edit(Categorie $categorie) // Renommer le paramètre à $category
     {
-        return view('categories.edit', compact('category')); // Renommer la variable compact à 'category'
+        return view('categories.edit', compact('categorie')); // Renommer la variable compact à 'category'
     }
 
-    public function update(Request $request, Categorie $category) // Renommer le paramètre à $category
+    public function update(Request $request, Categorie $categorie) // Renommer le paramètre à $category
     {
         $request->validate([
-            'libelle' => 'required|string|max:255|unique:categories,libelle,' . $category->id,
+            'libelle' => 'required|string|max:255|unique:categories,libelle,' . $categorie->id,
         ]);
 
-        $category->update($request->all());
+        $categorie->update($request->all());
         return redirect()->route('categories.index')->with('success', 'Catégorie mise à jour avec succès.');
     }
 
-    public function destroy(Categorie $category) // Renommer le paramètre à $category
+    public function destroy(Categorie $categorie) // Renommer le paramètre à $category
     {
-        $category->delete();
+        $categorie->delete();
         return redirect()->route('categories.index')->with('success', 'Catégorie supprimée avec succès.');
     }
 }

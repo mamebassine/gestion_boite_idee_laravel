@@ -30,7 +30,7 @@
 
     /* Style pour le bouton "Modifier" */
     .btn-modifier {
-        background-color: #007bff; /* Couleur de fond bleue */
+        background-color: #A3C2A2; /* Couleur de fond verte */
         color: #fff; /* Texte blanc */
         border: none;
         padding: 5px 10px;
@@ -39,7 +39,7 @@
     }
 
     .btn-modifier:hover {
-        background-color: #0056b3; /* Variation de couleur au survol */
+        background-color: #69f564; /* Variation de couleur au survol */
         color: #fff;
         text-decoration: none;
     }
@@ -47,11 +47,29 @@
     .btn-action {
         margin-right: 5px;
     }
+
+    /* Style pour le bouton "Ajouter une catégorie" */
+    .btn-ajouter {
+        background-color: #A3C2A2; /* Couleur de fond verte */
+        color: #fff; /* Texte blanc */
+        border: none;
+        padding: 8px 15px;
+        border-radius: 3px;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .btn-ajouter:hover {
+        background-color: #69f564; /* Variation de couleur au survol */
+        color: #fff;
+        text-decoration: none;
+    }
 </style>
 
 <div class="container">
     <h1>Liste des catégories</h1>
-    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Ajouter une catégorie</a>
+    <a href="{{ route('categories.create') }}" class="btn-ajouter">Ajouter une catégorie</a>
     <table class="table">
         <thead>
             <tr>
@@ -78,4 +96,4 @@
         </tbody>
     </table>
 </div>
-
+@endsection

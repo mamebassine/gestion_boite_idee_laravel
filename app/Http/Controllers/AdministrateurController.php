@@ -1,11 +1,7 @@
 <?php
-
-
-
-
-
 namespace App\Http\Controllers;
 
+use App\Models\Idee;
 use Illuminate\Http\Request;
 use App\Models\Administrateur;
 use Illuminate\Support\Facades\Auth;
@@ -73,19 +69,20 @@ class AdministrateurController extends Controller
         // Authentification échouée, rediriger avec un message d'erreur
         return redirect('/')->with('error', 'Adresse email ou mot de passe incorrect.');
     }
-
-    // Afficher le tableau de bord
-    public function dashboard()
-    {
-        return view('administrateurs.dashboard');
-    }
-
-    // Gérer la déconnexion
+// Gérer la déconnexion
     public function logout()
     {
         Auth::logout();
         return redirect()->route('idees.index'); // Rediriger vers la page d'accueil après la déconnexion
     }
+
+// Afficher le tableau de bord
+    public function dashboard()
+{
+    $idees = Idee::all(); // Assuming Idee is your model
+    return view('administrateurs.dashboard', compact('idees'));
+}
+
 }
 
 

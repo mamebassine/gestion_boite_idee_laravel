@@ -73,7 +73,7 @@ class IdeeController extends Controller
         // Supprime l'idée de la base de données
         $idee->delete();
         // Redirige vers la route 'idees.index' avec un message de succès
-        return redirect()->route('idees.index')->with('success', 'Idée supprimée avec succès.');
+        return redirect()->route('administrateurs.dashboard')->with('success', 'Idée supprimée avec succès.');
     }
 
     // Afficher le formulaire de modification
@@ -104,7 +104,7 @@ class IdeeController extends Controller
             Mail::to($idee->auteur_email)->send($idee->status === 'approuvée' ? new IdeeAcceptee($idee) : new IdeeRefusee($idee));
         }
 
-        return redirect()->route('idees.index')->with('success', 'Idée mise à jour avec succès');
+        return redirect()->route('administrateurs.dashboard')->with('success', 'Idée mise à jour avec succès');
     }
 
        

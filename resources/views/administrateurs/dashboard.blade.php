@@ -23,7 +23,8 @@
             height: 100%;
             top: 0;
             left: 0;
-            background-color: #2f9ffb;
+            background-color: #D5EEC6;
+            opacity: 93%;
             padding-top: 10px; /* Espacement réduit en haut */
             color: white;
             overflow-y: auto; /* Permet le défilement si nécessaire */
@@ -39,7 +40,7 @@
 
         /* Effet au survol des liens de la navbar */
         .navbar-vertical a:hover {
-            background-color: #e9bede;
+            background-color: #a0aa9b;
         }
 
         /* Style pour le conteneur du contenu principal */
@@ -83,24 +84,36 @@
 
         /* Style pour le bouton Voir détail */
         .btn-info {
-            background-color: #007bff; /* Couleur de fond bleue */
-            border-color: #007bff; /* Couleur de la bordure */
+            background-color: #D5EEC6; /* Couleur de fond verte */
+            border-color: #D5EEC6; /* Couleur de la bordure */
         }
 
         .btn-info:hover {
-            background-color: #0056b3; /* Couleur de fond bleue plus foncée au survol */
-            border-color: #0056b3; /* Couleur de la bordure au survol */
+            background-color: #D5EEC6; /* Couleur de fond verte plus foncée au survol */
+            border-color: #D5EEC6; /* Couleur de la bordure au survol */
         }
 
         /* Style pour le bouton Modifier */
         .btn-warning {
-            background-color: #007bff; /* Couleur de fond bleue */
-            border-color: #007bff; /* Couleur de la bordure */
+            background-color: #D5EEC6; /* Couleur de fond verte */
+            border-color: #D5EEC6; /* Couleur de la bordure */
         }
 
         .btn-warning:hover {
-            background-color: #0056b3; /* Couleur de fond bleue plus foncée au survol */
-            border-color: #0056b3; /* Couleur de la bordure au survol */
+            background-color: #D5EEC6; /* Couleur de fond verte plus foncée au survol */
+            border-color: #D5EEC6; /* Couleur de la bordure au survol */
+        }
+
+        /* Style pour le bouton Ajouter une idée */
+        .btn-primary {
+            background-color: #D5EEC6; /* Couleur de fond verte */
+            border-color: #D5EEC6; /* Couleur de la bordure */
+            color: white; /* Couleur du texte en blanc */
+        }
+
+        .btn-primary:hover {
+            background-color: #a8cba0; /* Couleur de fond verte plus foncée au survol */
+            border-color: #a8cba0; /* Couleur de la bordure au survol */
         }
     </style>
 </head>
@@ -145,9 +158,9 @@
                         <td>{{ Str::limit($idee->description, 50) }}</td>
                         <td>{{ $idee->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <!-- Bouton Voir détail stylisé en bleu -->
+                            <!-- Bouton Voir détail stylisé en vert -->
                             <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info btn-table">Voir détail</a>
-                            <!-- Bouton Modifier stylisé en bleu -->
+                            <!-- Bouton Modifier stylisé en vert -->
                             <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning btn-table">Modifier</a>
                             <!-- Bouton Supprimer avec confirmation -->
                             <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $idee->id }}').submit();" class="btn btn-danger btn-table">Supprimer</a>

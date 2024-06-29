@@ -25,8 +25,8 @@
             width: 100%;
         }
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background-color: #B7D7B3;
+            border-color: #B7D7B3;
         }
         .btn-primary:hover {
             background-color: #0056b3;
