@@ -26,6 +26,7 @@
         .image-container {
             flex: 1;
             background-image: url('https://via.placeholder.com/400');
+            /* background-image: url('https://via.placeholder.com/400'); */
             background-size: cover;
             background-position: center;
             border-top-left-radius: 8px;
