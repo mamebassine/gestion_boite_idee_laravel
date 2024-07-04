@@ -16,15 +16,17 @@
             position: relative;
             text-align: center;
             color: white;
-            height: 300px; /* Hauteur augmentée de la bannière */
+            height: 540px; /* Hauteur augmentée de la bannière */
             overflow: hidden; /* Cacher le contenu dépassant la bannière */
         }
         /* Styles pour l'image de la bannière */
         .banner img {
-            opacity: 0.35;
-            width: 100%; /* Largeur de l'image à 100% de la largeur du conteneur */
-            height: 300px; /* Hauteur fixe de l'image */
+            opacity: 10px;
+            width: 99%; /* Largeur de l'image à 100% de la largeur du conteneur */
+            height: 540px; /* Hauteur fixe de l'image */
             object-fit: cover; /* Ajuster l'image sans la déformer */
+            object-position: center; 
+            
         }
         /* Styles pour le contenu textuel de la bannière */
         .banner-content {
