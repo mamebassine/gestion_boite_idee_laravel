@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #B7D7B3;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,7 +26,6 @@
         .image-container {
             flex: 1;
             background-image: url('https://via.placeholder.com/400');
-            /* background-image: url('https://via.placeholder.com/400'); */
             background-size: cover;
             background-position: center;
             border-top-left-radius: 8px;
@@ -55,14 +54,14 @@
         .form-container form button {
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #B7D7B3;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
         .form-container form button:hover {
-            background-color: #0056b3;
+            background-color: #010101;
         }
         .form-container p {
             margin-top: 10px;
