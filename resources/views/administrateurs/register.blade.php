@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #B7D7B3;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -39,7 +39,8 @@
         .form-container h1 {
             margin-bottom: 20px;
         }
-    </style>
+        
+</style>
 </head>
 <body>
     <div class="container">
@@ -83,7 +84,9 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+                <button type="submit" class="btn w-100" style="background-color: #B7D7B3; border: 2px solid B7D7B3;color:#ffffff;">S'inscrire</button>
+
+                {{-- <button type="submit" class="btn btn-primary w-100">S'inscrire</button> --}}
             </form>
         </div>
     </div>
