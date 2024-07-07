@@ -54,66 +54,36 @@
             margin-top: 30px;
         }
 
-        /* Style pour le tableau */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+        /* Style pour les cartes */
+        .card-dashboard {
+            margin-bottom: 20px;
+            background-color: #D5EEC6;
+            color: white;
+            border: none;
+            /* Dégradé de couleur */
+            background: linear-gradient(135deg, #d1c6ee, #78A869);
+            /* Opacité */
+            opacity: 0.9;
         }
 
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+        .card-dashboard .card-body {
+            padding: 20px;
         }
 
-        th {
-            background-color: #f2f2f2;
-            color: #333333;
+        .card-dashboard .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .card-dashboard .card-text {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
-        /* Style pour les boutons dans le tableau */
-        .btn-table {
-            margin-right: 5px;
-            color: white; /* Couleur du texte en blanc */
-        }
-
-        /* Style pour le bouton Voir détail */
-        .btn-info {
-            background-color: #D5EEC6; /* Couleur de fond verte */
-            border-color: #D5EEC6; /* Couleur de la bordure */
-        }
-
-        .btn-info:hover {
-            background-color: #D5EEC6; /* Couleur de fond verte plus foncée au survol */
-            border-color: #D5EEC6; /* Couleur de la bordure au survol */
-        }
-
-        /* Style pour le bouton Modifier */
-        .btn-warning {
-            background-color: #D5EEC6; /* Couleur de fond verte */
-            border-color: #D5EEC6; /* Couleur de la bordure */
-        }
-
-        .btn-warning:hover {
-            background-color: #D5EEC6; /* Couleur de fond verte plus foncée au survol */
-            border-color: #D5EEC6; /* Couleur de la bordure au survol */
-        }
-
-        /* Style pour le bouton Ajouter une idée */
-        .btn-primary {
-            background-color: #D5EEC6; /* Couleur de fond verte */
-            border-color: #D5EEC6; /* Couleur de la bordure */
-            color: white; /* Couleur du texte en blanc */
-        }
-
-        .btn-primary:hover {
-            background-color: #a8cba0; /* Couleur de fond verte plus foncée au survol */
-            border-color: #a8cba0; /* Couleur de la bordure au survol */
+        /* Style pour les icônes */
+        .card-dashboard .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -122,16 +92,8 @@
     <nav class="navbar-vertical">
         <div>
             <!-- Liens de navigation -->
-            <a class="navbar-brand" href="#">Notre boite à idée</a>
+            <a class="navbar-brand" href="#">Midioma do</a>
             <a class="nav-link" href="{{ route('idees.index') }}">Accueil</a>
-            {{-- <a class="nav-link" href="{{ route('administrateurs.login') }}">Connexion</a>
-            <a class="nav-link" href="{{ route('idees.show', ['id' => 1]) }}">Voir détail d'une idée</a>
-            <a class="nav-link" href="{{ route('idees.edit', ['id' => 1]) }}">Mettre à jour une idée</a>
-            <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('delete-form-1').submit();">Supprimer</a>
-            <form id="delete-form-1" action="{{ route('idees.destroy', ['id' => 1]) }}" method="POST" style="display: none;"> --}}
-                @csrf
-                @method('DELETE')
-            </form>
             <a class="nav-link" href="{{ route('commentaires.index', ['id' => 1]) }}">Voir les commentaires sur une idée</a>
             <a class="nav-link" href="{{ route('logout') }}">Déconnexion</a>
         </div>
@@ -140,8 +102,42 @@
     <!-- Contenu principal -->
     <div class="content">
         <div class="container">
-            <h1>Liste des idées</h1>
-            <a href="{{ route('idees.create') }}" class="btn btn-primary mb-3">Ajouter une idée</a>
+            <h1>Tableau de Bord</h1>
+            <div class="row">
+                <!-- Carte pour le nombre d'idées -->
+                <div class="col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body">
+                            <i class="icon fas fa-lightbulb"></i>
+                            <h5 class="card-title">Nombre d'idées</h5>
+                            <p class="card-text">{{ $nombreIdees }}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte pour le nombre de catégories -->
+                <div class="col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body">
+                            <i class="icon fas fa-list-alt"></i>
+                            <h5 class="card-title">Nombre de catégories</h5>
+                            <p class="card-text">{{ $nombreCategories }}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carte pour le nombre de commentaires -->
+                <div class="col-md-4">
+                    <div class="card card-dashboard">
+                        <div class="card-body">
+                            <i class="icon fas fa-comment"></i>
+                            <h5 class="card-title">Nombre de commentaires</h5>
+                            <p class="card-text">{{ $nombreCommentaires }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Liste des idées -->
+            <h2>Liste des idées</h2>
+            <a href="{{ route('idees.create') }}" class="btn btn-primary mb-3" style="background-color: #A3C2A2; border-color: #A3C2A2";>Ajouter une idée</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -158,17 +154,16 @@
                         <td>{{ Str::limit($idee->description, 50) }}</td>
                         <td>{{ $idee->created_at->format('d/m/Y') }}</td>
                         <td>
-                            <!-- Bouton Voir détail stylisé en vert -->
-                            <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info btn-table">Voir détail</a>
-                            <!-- Bouton Modifier stylisé en vert -->
-                            <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning btn-table">Modifier</a>
-                            <!-- Bouton Supprimer avec confirmation -->
+                            <!-- Boutons d'action -->
+                            <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info btn-table" style="background-color: #A3C2A2; border-color: #A3C2A2";>Voir détail</a>
+                            <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning btn-table" style="background-color: #A3C2A2; border-color: #A3C2A2; color: #fff;">Modifier</a>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $idee->id }}').submit();" class="btn btn-danger btn-table">Supprimer</a>
                             <form id="delete-form-{{ $idee->id }}" action="{{ route('idees.destroy', ['id' => $idee->id]) }}" method="POST" style="display: none;">
                                 @csrf
                                 @method('DELETE')
                             </form>
                         </td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>

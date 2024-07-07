@@ -1,16 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container"> --}}
     <h2 class="my-4">La liste des idées</h2> {{-- Titre de la page avec une marge en haut et en bas --}}
+     {{-- Formulaire de filtrage par catégorie --}}
+     <form action="{{ route('filtre.idees.categorie') }}" method="GET" class="mb-3">
+        <div class="form-group">
+            <label for="categorie_id">Filtrer par catégorie :</label>
+            <select name="categorie_id" id="categorie_id" class="form-control">
+                <option value="">Toutes les catégories</option>
+                @foreach($categories as $categorie)
+                    <option value="{{ $categorie->id }}">{{ $categorie->libelle }}</option>
+                @endforeach
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="background-color: #A3C2A2; border-color: #A3C2A2";>Filtrer</button>
+    </form>
+
+
     <a href="{{ route('idees.create') }}" class="btn btn-primary mb-3" style="background-color: #A3C2A2; border-color: #A3C2A2;">Ajouter une idée</a> {{-- Bouton pour ajouter une nouvelle idée, avec style personnalisé --}}
+    @if(!$ideesTrouvees)
+    <div class="alert alert-info">Aucune idée trouvée pour cette catégorie.</div>
+@endif
 
     <div class="row">
         @foreach($idees as $idee)
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm"> {{-- Retrait de la classe h-100, pour ajuster la taille de la carte dynamiquement --}}
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ $idee->libelle }}</h5>
+                    <h5 class="card-title">{{ $categorie->libelle }}</h5>
                     <p class="card-text">{{ Str::limit($idee->description, 50) }}</p>
                     <p class="card-text"><small class="text-muted">{{ $idee->created_at->format('d/m/Y') }}</small></p>
                     <div class="mt-auto text-center">

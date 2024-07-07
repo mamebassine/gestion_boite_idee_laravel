@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\administrateurController;
 use App\Models\Administrateur;
+use App\Http\Controllers\FiltreController;
 
 
 
@@ -33,6 +34,16 @@ Route::post('/categories', [CategorieController::class, 'store'])->name('categor
 Route::get('/categories/{categorie}/edit', [CategorieController::class, 'edit'])->name('categories.edit');
 Route::put('/categories/{categorie}', [CategorieController::class, 'update'])->name('categories.update');
 Route::delete('/categories/{categorie}', [CategorieController::class, 'destroy'])->name('categories.destroy');
+
+// Routes pour le filtrage des idées par catégorie
+Route::get('/filtre/idees/categorie', [FiltreController::class, 'filtrerParCategorie'])->name('filtre.idees.categorie');
+
+
+
+
+
+
+
 
 
 // Routes pour commentaires
