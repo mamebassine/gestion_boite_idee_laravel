@@ -26,11 +26,14 @@
         }
         .image-container {
             flex: 1;
-            background-image: url('https://via.placeholder.com/400');
+            background-image: url("{{ asset('images/image2.jpg') }}");
+            /* background-image: url('https://via.placeholder.com/400'); */
             background-size: cover;
             background-position: center;
             border-top-left-radius: 8px;
             border-bottom-left-radius: 8px;
+            
+            
         }
         .form-container {
             flex: 1;
@@ -86,7 +89,6 @@
                 </div>
                 <button type="submit" class="btn w-100" style="background-color: #B7D7B3; border: 2px solid B7D7B3;color:#ffffff;">S'inscrire</button>
 
-                {{-- <button type="submit" class="btn btn-primary w-100">S'inscrire</button> --}}
             </form>
         </div>
     </div>

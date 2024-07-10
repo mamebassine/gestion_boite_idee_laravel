@@ -14,7 +14,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary" style="background-color: #A3C2A2; border-color: #A3C2A2";>Filtrer</button>
+        <button type="submit" class="btn btn-primary" style="background-color: #A3C2A2; border-color: #A3C2A2;  width: 13%;">Filtrer</button>
     </form>
 
 
@@ -46,6 +46,7 @@
         background-color: #B7D7B3;
         border-color: #B7D7B3;
         color: #fff;
+        width: 50%;
     }
 
     .btn-custom:hover {

@@ -37,14 +37,7 @@
         border-radius: 3px;
         text-decoration: none;
     }
-
-    .btn-modifier:hover {
-        background-color: #69f564; /* Variation de couleur au survol */
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .btn-action {
+ .btn-action {
         margin-right: 5px;
     }
 

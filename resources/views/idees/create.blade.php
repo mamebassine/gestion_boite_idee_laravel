@@ -20,13 +20,13 @@
             padding: 18px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            
-           width: 100%;
+                        
+
+           
         }
         .image-container {
             flex: 1;
             background-image: url("{{ asset('images/image4.jpeg') }}");
-           
             background-size: cover;
             background-position: center;
             border-top-left-radius: 8px;
