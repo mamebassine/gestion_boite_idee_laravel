@@ -28,7 +28,7 @@
         <div class="col-md-4 mb-4">
             <div class="card shadow-sm"> {{-- Retrait de la classe h-100, pour ajuster la taille de la carte dynamiquement --}}
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ $categorie->libelle }}</h5>
+                    <h5 class="card-title">{{ $idee->libelle }}</h5>
                     <p class="card-text">{{ Str::limit($idee->description, 50) }}</p>
                     <p class="card-text"><small class="text-muted">{{ $idee->created_at->format('d/m/Y') }}</small></p>
                     <div class="mt-auto text-center">

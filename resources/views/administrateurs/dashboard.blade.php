@@ -23,7 +23,8 @@
             height: 100%;
             top: 0;
             left: 0;
-            background-color: #D5EEC6;
+            background: linear-gradient(135deg, #d1c6ee, #78A869);
+            /* background-color: #D5EEC6; */
             opacity: 93%;
             padding-top: 10px; /* Espacement réduit en haut */
             color: white;

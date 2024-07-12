@@ -5,7 +5,7 @@ use App\Http\Controllers\IdeeController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CommentaireController;
-use App\Http\Controllers\administrateurController;
+use App\Http\Controllers\AdministrateurController;
 use App\Models\Administrateur;
 use App\Http\Controllers\FiltreController;
 
@@ -38,14 +38,6 @@ Route::delete('/categories/{categorie}', [CategorieController::class, 'destroy']
 // Routes pour le filtrage des idées par catégorie
 Route::get('/filtre/idees/categorie', [FiltreController::class, 'filtrerParCategorie'])->name('filtre.idees.categorie');
 
-
-
-
-
-
-
-
-
 // Routes pour commentaires
 Route::get('/idees/{idee}/commentaires', [CommentaireController::class, 'index'])->name('idees.commentaires.index');
 Route::get('/idees/{idee}/commentaires/create', [CommentaireController::class, 'create'])->name('idees.commentaires.create');
@@ -55,7 +47,6 @@ Route::put('/idees/{idee}/commentaires/{commentaire}', [CommentaireController::c
 Route::delete('/idees/{idee}/commentaires/{commentaire}', [CommentaireController::class, 'destroy'])->name('idees.commentaires.destroy');
 
 // AUTHENTIFICATIONS
-
 // Route pour l'inscription
 Route::get('/register', [AdministrateurController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [AdministrateurController::class, 'register']);
@@ -76,27 +67,6 @@ Route::get('/administrateurs/dashboard', [AdministrateurController::class, 'dash
 Route::post('/logout', [AdministrateurController::class, 'logout'])->name('logout');
 
 Route::get('/logout', [AdministrateurController::class, 'logout'])->name('logout');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
