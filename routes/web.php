@@ -14,7 +14,8 @@ use App\Http\Controllers\FiltreController;
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Routes pour idees
-Route::get('/idees', [IdeeController::class, 'index'])->name('idees.index');
+Route::get('/', [IdeeController::class, 'index'])->name('idees.index'); 
+// Route::get('/idees', [IdeeController::class, 'index'])->name('idees.index');
 Route::get('/idees/create', [IdeeController::class, 'create'])->name('idees.create');
 Route::post('/idees', [IdeeController::class, 'store'])->name('idees.store');
 Route::get('/idees/{id}', [IdeeController::class, 'show'])->name('idees.show');
