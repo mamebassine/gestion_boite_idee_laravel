@@ -156,7 +156,7 @@
     }
 
     .btn-ajouter:hover {
-        background-color: #69f564; /* Variation de couleur au survol */
+       /* background-color: #69f564; /* Variation de couleur au survol */
         color: #fff;
         text-decoration: none;
     }

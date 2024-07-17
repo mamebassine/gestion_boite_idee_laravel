@@ -1,6 +1,10 @@
 {{-- @extends('layouts.app') --}}
 
 <style>
+    body{
+    background-color: #C5DEB6; 
+        
+    }
     .btn-primary {
         background-color: #D5EEC6; /* Couleur de fond du bouton */
         border: none;
@@ -22,7 +26,7 @@
         padding: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre au conteneur */
         border-radius: 8px; /* Arrondit les coins du conteneur */
-        background-color: #f9f9f9; /* Couleur de fond du conteneur */
+        background-color: #fff; /* Couleur de fond du conteneur */
         display: flex;
         align-items: center; /* Centre verticalement le contenu */
         justify-content: center; /* Centre horizontalement le contenu */

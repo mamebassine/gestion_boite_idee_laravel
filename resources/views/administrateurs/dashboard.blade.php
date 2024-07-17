@@ -16,6 +16,9 @@
             background-color: #f8f9fa; /* Couleur de fond */
         }
 
+
+        
+
         /* Style pour la barre de navigation verticale */
         .navbar-vertical {
             width: 200px; /* Largeur réduite */
@@ -86,6 +89,14 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+
+        /* Style pour les boutons d'action */
+        .btn-table {
+            padding: 0px 14px;
+            font-size: 15px;
+            text-align: left;
+        }
+        
     </style>
 </head>
 <body>
@@ -138,7 +149,7 @@
             </div>
             <!-- Liste des idées -->
             <h2>Liste des idées</h2>
-            <a href="{{ route('idees.create') }}" class="btn btn-primary mb-3" style="background-color: #A3C2A2; border-color: #A3C2A2";>Ajouter une idée</a>
+            <a href="{{ route('idees.create') }}" class="btn btn-primary mb-3" style="background-color: #A3C2A2; border-color: #A3C2A2;">Ajouter une idée</a>
             <table class="table">
                 <thead>
                     <tr>
@@ -154,10 +165,10 @@
                         <td>{{ $idee->libelle }}</td>
                         <td>{{ Str::limit($idee->description, 50) }}</td>
                         <td>{{ $idee->created_at->format('d/m/Y') }}</td>
-                        <td>
+                        <td class="d-flex">
                             <!-- Boutons d'action -->
-                            <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info btn-table" style="background-color: #A3C2A2; border-color: #A3C2A2";>Voir détail</a>
-                            <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning btn-table" style="background-color: #A3C2A2; border-color: #A3C2A2; color: #fff;">Modifier</a>
+                            <a href="{{ route('idees.show', $idee->id) }}" class="btn btn-info btn-table mr-2" style="background-color: #A3C2A2; border-color: #A3C2A2;">Voir détail</a>
+                            <a href="{{ route('idees.edit', $idee->id) }}" class="btn btn-warning btn-table mr-2" style="background-color: #A3C2A2; border-color: #A3C2A2; color: #fff;">Modifier</a>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $idee->id }}').submit();" class="btn btn-danger btn-table">Supprimer</a>
                             <form id="delete-form-{{ $idee->id }}" action="{{ route('idees.destroy', ['id' => $idee->id]) }}" method="POST" style="display: none;">
                                 @csrf
