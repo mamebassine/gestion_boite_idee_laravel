@@ -39,7 +39,7 @@ class AdministrateurController extends Controller
         ]);
 
         // Redirection après inscription réussie
-        return redirect()->route('login')->with('success', 'Inscription réussie. Vous pouvez maintenant vous connecter.');
+        return redirect()->route('administrateurs.login')->with('success', 'Inscription réussie. Vous pouvez maintenant vous connecter.');
     }
 
     // Afficher le formulaire de connexion
@@ -69,7 +69,7 @@ class AdministrateurController extends Controller
         }
 
         // Authentification échouée, rediriger avec un message d'erreur
-        return redirect('/')->with('error', 'Adresse email ou mot de passe incorrect.');
+        return redirect('login')->with('error', 'Adresse email ou mot de passe incorrect.');
     }
 // Gérer la déconnexion
     public function logout()

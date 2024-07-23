@@ -23,7 +23,7 @@ class IdeeAcceptee extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Votre idée a été refusée',
+            subject: 'Votre idée a été acceptee',
         );
     }
 

@@ -106,7 +106,13 @@
             <!-- Liens de navigation -->
             <a class="navbar-brand" href="#">Midioma do</a>
             <a class="nav-link" href="{{ route('idees.index') }}">Accueil</a>
-            <a class="nav-link" href="{{ route('commentaires.index', ['id' => 1]) }}">Voir les commentaires sur une idée</a>
+
+            <a class="nav-link" href="{{ route('categories.index') }}">Espace catégorie</a>
+
+            {{-- <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Espace catégorie</a></li> --}}
+
+
+            {{-- <a class="nav-link" href="{{ route('commentaires.index', ['id' => 1]) }}">Voir les commentaires sur une idée</a> --}}
             <a class="nav-link" href="{{ route('logout') }}">Déconnexion</a>
         </div>
     </nav>
