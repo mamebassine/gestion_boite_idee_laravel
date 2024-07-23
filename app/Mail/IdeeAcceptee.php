@@ -23,14 +23,14 @@ class IdeeAcceptee extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Votre idée a été acceptee',
+            subject: 'Votre idée a été acceptée',
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'emails.idee_refusee',
+            view: 'emails.idee_acceptee',
         );
     }
 

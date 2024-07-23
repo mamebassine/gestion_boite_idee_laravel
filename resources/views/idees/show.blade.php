@@ -53,7 +53,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Liens de navigation -->
                     <li class="nav-item"><a class="nav-link" href="{{ route('idees.index') }}">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Espace catégorie</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link" href="{{ route('categories.index') }}">Espace catégorie</a></li> --}}
                     <li class="nav-item"><a class="nav-link" href="{{ route('administrateurs.login') }}">Espace Perso</a></li>
                 </ul>
             </div>
